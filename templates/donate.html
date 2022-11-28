@@ -1,0 +1,34 @@
+{% extends "baseTemp.html" %}
+{% block content %}
+
+<section class="u-clearfix u-image u-valign-middle u-section-1" id="sec-0ce8" data-image-width="400" data-image-height="265">
+  <div class="u-container-align-center u-container-style u-grey-5 u-group u-radius-10 u-shape-round u-group-1">
+    <div class="u-container-layout u-container-layout-1">
+      <img class="u-image u-image-circle u-image-contain u-preserve-proportions u-image-1" src="{{ url_for('static', filename = '/donate/donImage.jpg' )}}" alt="" data-image-width="360" data-image-height="360">
+      <div class="u-form u-form-1">
+        <form action="/donate" method='POST'  source="email" name="form" style="padding: 10px;">
+          <div class="u-form-group u-form-name u-form-group-3">
+            <label for="name-a088" class="u-label">Amount - Rs.</label>
+            <input type="text" placeholder="Enter Amount" id="name-a088" name="amount" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+          </div>
+          <div class="u-form-group u-form-message">
+            <label for="message-1b9b" class="u-label">Message</label>
+            <textarea placeholder="Enter your message(Optional)" rows="4" cols="50" id="message-1b9b" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" ></textarea>
+          </div>
+          <p class="u-form-group u-form-text u-text u-text-1"> Sample text. Click to select the Text Element. </p>
+          <div class="u-align-left u-form-group u-form-submit">
+            <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
+            <input type="submit" value="submit" class="u-form-control-hidden">
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+{% endblock  %}

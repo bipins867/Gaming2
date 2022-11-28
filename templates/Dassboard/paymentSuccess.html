@@ -1,0 +1,19 @@
+{% extends "baseTemp.html" %}
+{% block content %}
+
+<p>
+
+  Payment Id :-{{payData['rPayId']}}<br>
+  Payment Link Id :-{{payData['rPayLId']}}<br>
+  Payment Link Status :-{{payData['rPayLStatus']}}<br>
+  {% if payData['rPayLStatus']=="paid" %}
+
+      <h2> Successful Payment</h2>
+  {% else %}
+      <h2> Failed Payment</h2>
+  {% endif %}
+
+
+</p>
+
+{% endblock %}

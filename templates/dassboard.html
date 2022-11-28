@@ -1,0 +1,81 @@
+{% extends "baseTemp.html" %}
+{% block content %}
+
+
+<div class="u-expanded-width u-list u-list-1">
+  <div class="u-repeater u-repeater-1">
+    <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
+      <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1">
+        <a href="/dassboard/viewProfile" class="u-active-none u-align-center u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-1">View Profile</a>
+      </div>
+    </div>
+    <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-2">
+      <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-2">
+        <a href="/dassboard/notification" class="u-active-none u-align-center u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Notifications</a>
+      </div>
+    </div>
+    <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-3">
+      <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
+        <a href="/dassboard/prevTransaction" class="u-active-none u-align-center u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-3">Previous Transaction</a>
+      </div>
+    </div>
+    <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-3">
+      <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
+        <a href="/dassboard/serverTransaction" class="u-active-none u-align-center u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-3">Server Transaction</a>
+      </div>
+    </div>
+    <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-3">
+      <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
+        <a href="/dassboard/eventHistory" class="u-active-none u-align-center u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-3">Event History</a>
+      </div>
+    </div>
+  </div>
+</div>
+<p class="u-large-text u-text u-text-default u-text-variant u-text-1" data-lang-en="Here are the list of the events&amp;nbsp;">
+  <font style="vertical-align: inherit;">
+    <font style="vertical-align: inherit;">WELCOME&nbsp; &nbsp; <span class="u-text-custom-color-1"> {{user_name}}<span style="font-weight: 700;"></span>
+      </span>
+    </font>
+  </font>
+  </p>
+<div class="u-expanded-width u-list u-list-2">
+  <div class="u-repeater u-repeater-2">
+    <!-- THIS IS THE REPEATER -->
+    {% if xEveLen>0 %}
+    {% for eventId,eventName,sortDesc,amount,creTime,expTime in dataEvent%}
+    <div class="u-container-style u-list-item u-repeater-item">
+      <div class="u-container-layout u-similar-container u-container-layout-4">
+        <div class="u-border-2 u-border-grey-dark-1 u-container-style u-group u-image u-radius-50 u-shape-round u-image-1" data-image-width="1920" data-image-height="1200">
+          <div class="u-container-layout u-container-layout-5">
+            <h5 class="u-text u-text-default u-text-palette-1-base u-text-2" data-lang-en="Event Name" data-lang-ru="<font style=&quot;vertical-align: inherit;&quot;><font style=&quot;vertical-align: inherit;&quot;>Event Name</font></font>">{{eventName}}</h5>
+            <p class="u-text u-text-default u-text-3">{{eventId}}</p>
+            <p class="u-text u-text-4" data-lang-ru="Sample text. Click to select the Text Element.<br><br><br><br><br>Hello World">{{sortDesc}}.
+              <br>
+              <br>
+              <br>
+
+            </p>
+            <p class="infinite u-text u-text-default u-text-5" data-animation-name="flash" data-animation-duration="2000" data-animation-direction="">Amount (Rs.) :- {{amount}}/-</p>
+            <p class="infinite u-text u-text-custom-color-2 u-text-default u-text-6" data-animation-name="pulse" data-animation-duration="1000" data-animation-direction="">Expiry Time:- {{expTime}}<span style="font-weight: 700;"></span>
+            </p>
+            <h5 class="u-text u-text-custom-color-1 u-text-7" data-lang-ru="Participants<br>">Participants<br>
+            </h5>
+            <a href="/dassboard/payEvent/{{eventId}}" class="u-btn u-btn-round u-button-style u-gradient u-none u-radius-4 u-text-body-alt-color u-btn-4" data-lang-ru="{&quot;content&quot;:&quot;PARTICIPATE&quot;,&quot;href&quot;:&quot;https://nicepage.com/k/birthday-html-templates&quot;}">PARTICIPATE</a>
+            <h5 class="u-text u-text-custom-color-2 u-text-8" data-lang-ru="#55<br>">#{{partEvent[eventId]}}<br>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+    {% else %}
+
+    <center><b> No Events are created. Wait for some time </b></center>
+
+    {% endif %}
+    <!-- THIS IS THE LAST REPEATER -->
+
+  </div>
+</div>
+{% endblock %}

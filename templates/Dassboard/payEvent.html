@@ -1,0 +1,38 @@
+{% extends "baseTemp.html" %}
+{% block content %}
+
+
+
+<section class="u-clearfix u-image u-section-1" id="sec-0ce8" data-image-width="400" data-image-height="265">
+  <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+    <div class="u-container-style u-expanded-width-xs u-grey-10 u-group u-hover-feature u-radius-30 u-shape-round u-group-1">
+      <div class="u-container-layout u-container-layout-1">
+        <h3 class="u-text u-text-default u-text-palette-1-light-1 u-text-1">{{dataEvent['eventName']}}</h3>
+        <h6 class="u-align-left u-text u-text-default u-text-2">{{dataEvent['eventId']}}</h6>
+        <h2 class="infinite u-align-left u-text u-text-default u-text-3" data-animation-name="pulse" data-animation-duration="1000" data-animation-direction="">Rs. :- <span class="u-text-custom-color-3">{{dataEvent['Amount']}}</span>/-
+        </h2>
+        <h4 class="u-align-left u-text u-text-default u-text-4">Created On :-<span class="u-text-custom-color-3">{{dataEvent['creTime']}}</span>
+        </h4>
+        <h4 class="u-align-left u-text u-text-default u-text-5">Expiry On :-<span class="u-text-custom-color-1">{{dataEvent['expTime']}}</span>
+        </h4>
+        <p class="u-align-left u-text u-text-6">{{dataEvent['sortDesc']}}
+          <br><br>
+        </p>
+        <h4 class="u-align-left u-text u-text-default u-text-7">
+          <span style="font-weight: 400;">Participants</span> :-<span class="u-text-grey-60">#{{partEvent}}</span>
+        </h4>
+        <h4 class="u-align-left u-text u-text-default u-text-8">
+          <span style="font-weight: 400;">Each Winner will get</span>:-<span class="u-text-grey-60">#56</span>
+        </h4>
+        <p class="u-align-left u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-palette-2-base u-text-9">{{status_msg}}</p>
+        {% if trans!=1 and eventIdExist %}
+        <a href="/dassboard/payEventNow/{{eventId}}" class="infinite u-border-2 u-border-custom-color-3 u-btn u-btn-round u-button-style u-hover-custom-color-3 u-none u-radius-50 u-text-body-color u-text-hover-white u-btn-1" data-animation-name="pulse" data-animation-duration="500" data-animation-direction="">PAY NOW</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+{% endblock %}

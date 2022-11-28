@@ -1,0 +1,36 @@
+{% extends "baseTemp.html" %}
+{% block content %}
+
+
+<h5 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-1">Previous Transaction</h5>
+<div class="u-align-center u-table u-table-responsive u-table-1">
+  {% if length>0 %}
+  <table class="u-table-entity">
+    <thead class="u-align-center u-palette-4-light-3 u-table-header u-table-header-1">
+      <tr style="height: 53px;">
+        {% for col in cols %}
+        <th class="u-border-4 u-border-grey-dark-1 u-table-cell u-table-cell-1">{{col}}</th>
+        {%endfor %}
+      </tr>
+    </thead>
+    <tbody class="u-align-center u-table-alt-grey-10 u-table-body u-white u-table-body-1">
+
+      {% for xdata in data %}
+      <tr style="height: 67px;">
+        {% for value in xdata %}
+        <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-6">{{value}}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+
+
+    </tbody>
+  </table>
+  {% else %}
+  <center><b> You have not made any payments yet </b></center>
+  {% endif %}
+</div>
+
+
+
+{% endblock %}

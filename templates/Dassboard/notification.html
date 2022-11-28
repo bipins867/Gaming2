@@ -1,0 +1,31 @@
+{% extends "baseTemp.html" %}
+{% block content %}
+
+
+  <h5 class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-1">Notifications</h5>
+  <div class="u-list u-list-1">
+    <div class="u-repeater u-repeater-1">
+
+      {% if xlen==0 %}
+      <center> <b> No Notifications Found</b> </center>
+      {%else %}
+
+      {% for time,head,notf in data %}
+      <div class="u-container-style u-gradient u-list-item u-radius-50 u-repeater-item u-shape-round u-list-item-1">
+        <div class="u-container-layout u-similar-container u-container-layout-1">
+          <h6 class="u-text u-text-default u-text-palette-1-light-1 u-text-2">{{head}}</h6>
+          <p class="u-align-center u-text u-text-3">{{notf}}<br>
+          </p>
+          <p class="u-align-right u-text u-text-palette-2-dark-1 u-text-4">{{time}}</p>
+        </div>
+      </div>
+
+      {% endfor %}
+
+      {% endif %}
+    </div>
+  </div>
+
+
+
+{% endblock %}

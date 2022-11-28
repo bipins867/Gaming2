@@ -1,0 +1,55 @@
+{% extends "baseTemp.html" %}
+{% block content %}
+
+<div class="u-container-style u-group u-palette-5-base u-radius-15 u-shape-round u-group-1">
+  <div class="u-container-layout u-container-layout-1">
+    <h2 class="u-subtitle u-text u-text-custom-color-1 u-text-1">Sign Up</h2>
+    <div class="u-expanded-width u-form u-form-1">
+      <form action="/signUp", method='POST' source="email" name="form" style="padding: 10px;">
+        <div class="u-form-group u-form-name">
+          <label for="name-8eff" class="u-label">Name</label>
+          <input type="text" placeholder="Enter your Name" id="name-8eff" name='userName' value="{{value['userName']}}"  class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+          <h5 class="u-text u-text-custom-color-1 u-text-2">{{msg['userName']}}</h5>
+
+        </div>
+        <div class="u-form-email u-form-group">
+          <label for="email-8eff" class="u-label">Email</label>
+          <input type="email" placeholder="Enter a valid email address" id="email-8eff" name='userEmail' value="{{value['userEmail']}}" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+          <h5 class="u-text u-text-custom-color-1 u-text-2">{{msg['userEmail']}}</h5>
+        </div>
+        <div class="u-form-group u-form-group-3">
+          <label for="text-ff0c" class="u-label">Mob No.</label>
+          <input type="text" placeholder="Enter mobile number" id="text-ff0c" name='userMobNo' value="{{value['userMobNo']}}" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+          <h5 class="u-text u-text-custom-color-1 u-text-2">{{msg['userMobNo']}}</h5>
+        </div>
+        <div class="u-form-group u-form-name u-form-group-4">
+          <label for="name-f012" class="u-label">Vpa/Upi id</label>
+          <input type="text" placeholder="Enter your upi id " id="name-f012" name='userVpa' value="{{value['userVpa']}}" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+          <h5 class="u-text u-text-custom-color-1 u-text-2">{{msg['userVpa']}}</h5>
+        </div>
+        <div class="u-form-group u-form-group-5">
+          <label for="text-541b" class="u-label">Vpa/Upi Name</label>
+          <input type="text" placeholder="Enter upi name" id="text-541b" name='userVpaName' value="{{value['userVpaName']}}" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+          <h5 class="u-text u-text-custom-color-1 u-text-2">{{msg['userVpaName']}}</h5>
+        </div>
+        <div class="u-form-group u-form-group-6">
+          <label for="text-7f97" class="u-label">Password</label>
+          <input type="password" placeholder="******" id="text-7f97" name='userPass' class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+        </div><div class="u-form-group u-form-group-6">
+          <label for="text-7f97" class="u-label">Confirm Password</label>
+          <input type="password" placeholder="******" id="text-7f97" name='userCPass' class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+          <h5 class="u-text u-text-custom-color-1 u-text-2">{{msg['userPass']}}</h5>
+        </div>
+        <div class="u-align-left u-form-group u-form-submit">
+          <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-radius-50">Sign Up</a>
+          <input type="submit" value="submit" class="u-form-control-hidden">
+        </div>
+        <h5 class="u-text u-text-custom-color-1 u-text-2">{{signUp_message}}</h5>
+      </form>
+    </div>
+
+    <a href="/login" class="u-active-none u-border-2 u-border-active-palette-2-dark-1 u-border-hover-palette-2-base u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-btn u-button-style u-hover-none u-none u-text-hover-palette-2-base u-text-palette-1-base u-btn-2">Already Have a account.</a>
+  </div>
+</div>
+
+{% endblock  %}

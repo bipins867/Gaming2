@@ -1,0 +1,28 @@
+{% extends "baseTemp.html" %}
+{% block content %}
+
+<div class="u-container-style u-gradient u-group u-opacity u-opacity-90 u-radius-26 u-shape-round u-group-1">
+  <div class="u-container-layout u-container-layout-1">
+    <h6 class="u-text u-text-default u-text-1">Welcome​&nbsp;&nbsp;<span class="u-text-palette-1-base"> {{data['user_name']}}</span>
+    </h6>
+    <h6 class="u-text u-text-default u-text-2">Email :-<br>
+      <span style="text-decoration: underline !important;" class="u-text-palette-1-base">{{data['userEmail']}}</span>
+    </h6>
+    <h6 class="u-text u-text-default u-text-3">Mob No :-&nbsp;&nbsp;<span style="text-decoration: underline !important;" class="u-text-custom-color-1">
+        <br>
+        <span class="u-text-palette-1-base"><span style="text-decoration: underline !important;">{{data['userMobNo']}}</span>
+        </span>
+      </span>
+    </h6>
+    <h6 class="u-text u-text-default u-text-4">Vpa/Upi Id :-<br>
+      <span style="text-decoration: underline !important;" class="u-text-palette-1-base">{{data['userVpa']}}</span>
+    </h6>
+    <h6 class="u-text u-text-default u-text-5">Vpa/Upi Name :-&nbsp;<br>
+      <span style="text-decoration: underline !important;" class="u-text-palette-1-base">{{data['userVpaName']}}</span>
+    </h6>
+    <h6 class="u-text u-text-custom-color-1 u-text-6">Due to some reasion changing data in&nbsp;<br>profile is not allowed. It will be avalable soon
+    </h6>
+  </div>
+</div>
+</div>
+{% endblock %}
